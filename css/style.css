@@ -1,0 +1,226 @@
+.bandeau{
+    height: 300px;
+    width: 100%;
+    background-image: url("../assets/images/resto.jpg");
+    object-fit: cover;
+    
+}
+
+.list-group-item{
+    width: 30vw;
+    text-align: center;
+    margin: auto;
+    border: 2px solid black;
+    background-color: lightgrey;
+}
+
+.modal-container{
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    display: none; /* Le modal est caché par défaut */
+}
+
+.modal-container.active {
+    display: block;  
+    /* Le modal devient visible quand la classe active est ajoutée */
+} 
+
+.overlay{
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    background: rgba(0, 0, 0, 0.5);
+}
+
+#Modal{
+    display: none;
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    padding: 80px;
+    background: rgba(0, 0, 0, 0.5);
+    border-radius: 5px;
+    transform: translate(-50%, -50%);
+    width: 100vw;  
+    height: 100vh;  
+}
+
+.close-modal{
+    padding: 8px 10px;
+    border: none;
+    border-radius: 5px;
+    font-size: 18px;
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    cursor: pointer;
+    background: #ff365e;
+    color: white;
+}
+
+#ModalContent {
+    background: #fff;
+
+}  
+
+#recipeList {
+    display: flex;
+    flex-wrap: wrap;  
+    justify-content: space-between; 
+    gap: 20px;  
+    margin: 0 auto;
+    padding: 20px;
+}
+
+.recipe-image-container {
+    width: calc(33.33% - 20px); /* 3 éléments par ligne avec un espace de 20px entre eux */
+    background-color: #fff;
+    border-radius: 8px;
+    overflow: hidden;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+    text-align: center;
+    /* transition: transform 0.3s ease, box-shadow 0.3s ease; */
+    text-decoration: none; /* Retirer le soulignement des liens */
+    border: 1px solid black;
+    box-shadow: 1px 1px 1px black;
+}
+
+.recipe-image-container:hover {
+    transform: translateY(-5px); /* Légère élévation au survol */
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.2); /* Augmente l'ombre au survol */
+}
+
+.recipe-image {
+    width: 100%;
+    height: auto;
+    border-bottom: 2px solid #f1f1f1;
+}
+
+.recipe-name {
+    font-size: 18px;
+    font-weight: bold;
+    padding: 10px;
+    margin: 0;
+    color: #333;
+    background-color: #fff;
+    /* transition: color 0.3s ease; */
+}
+
+.recipe-image-container:hover .recipe-name {
+    color: #ff365e; 
+}
+
+#accueilrecipeList img {
+    width: 100%; /* L'image prendra toute la largeur de la div */
+    height: 100%; /* L'image prendra toute la hauteur de la div */
+    object-fit: cover; /* L'image couvre toute la div sans déformation (garde le ratio de l'image) */
+}
+
+#modalContent{
+    background-color: bisque;
+}
+
+#modal-title{
+    text-align: center;
+    background-color: bisque;
+}
+
+#modal-category{
+    text-align: center;
+    background-color: bisque;
+}
+
+#modal-time{
+    text-align: center;
+    background-color: bisque;
+}
+
+#modal-etapes, #modal-ingredients {
+    list-style-type: none;
+    text-align: left;
+    text-decoration: none;
+    background-color: bisque;
+}
+
+#calendar-container {
+    margin-top: 30px;
+    text-align: center;
+}
+
+#calendar {
+    display: grid;
+    grid-template-columns: repeat(7, 1fr);
+    grid-gap: 1px;
+    background-color: #f1f1f1;
+    margin-bottom: 20px;
+}
+
+.calendar-day {
+    padding: 10px;
+    background-color: #fff;
+    border: 1px solid #ddd;
+    cursor: pointer;
+    text-align: center;
+    position: relative;  /* Pour pouvoir positionner les repas à l'intérieur */
+    height: 100px;  /* Taille fixe de la case */
+    box-sizing: border-box;
+    overflow: hidden;  /* Eviter que le contenu dépasse */
+}
+
+.calendar-day.selected {
+    background-color: #28a745;
+    color: white;
+}
+
+.calendar-header {
+    background-color: #007bff;
+    color: white;
+    padding: 10px;
+}
+
+.empty {
+    background-color: #f1f1f1;
+    height: 100px;
+}
+
+#Modal {
+    display: none;
+}
+
+.meal-name {
+    font-size: 12px;
+    color: #007bff;
+    cursor: pointer;
+    background-color: rgba(0, 123, 255, 0.1);
+    border-radius: 5px;
+    padding: 5px;
+    margin-top: 5px;
+}
+
+.meal-name span {
+    margin-left: 10px;
+    cursor: pointer;
+    color: red;
+}
+
+
+
+
+/* Ajout de responsiveness pour les écrans plus petits */
+@media (max-width: 1200px) {
+    .recipe-image-container {
+        width: calc(50% - 20px); /* 2 éléments par ligne sur les écrans moyens */
+    }
+}
+
+@media (max-width: 768px) {
+    .recipe-image-container {
+        width: 100%; /* 1 élément par ligne sur les petits écrans */
+    }
+}
+
